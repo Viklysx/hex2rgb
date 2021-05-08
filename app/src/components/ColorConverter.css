@@ -1,0 +1,27 @@
+input {
+    outline: none;
+    width: 150px;
+    height: 30px;
+    padding: 10px;
+    margin: 2px;
+    border: none;
+}
+
+span {
+    width: 150px;
+    height: 30px;
+    padding: 10px;
+    margin: 2px;
+    background-color: #35343496;
+    color: white;
+}
+
+form {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: #993366; */
+}
