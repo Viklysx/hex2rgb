@@ -5,6 +5,8 @@ input {
     padding: 10px;
     margin: 2px;
     border: none;
+    text-align: center;
+    font-size: x-large;
 }
 
 span {
@@ -13,7 +15,8 @@ span {
     padding: 10px;
     margin: 2px;
     background-color: #35343496;
-    color: white;
+    color: white;   
+    font-size: large;
 }
 
 form {
