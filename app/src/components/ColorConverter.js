@@ -3,16 +3,20 @@ import './ColorConverter.css';
 
 export default function ColorConverter({ props }) {
     const [form, setForm] = useState({
-        rgb: 'rgb(153, 51, 102)',
-        hex: '#993366'
+        rgb: '',
+        hex: ''
     });
 
     const handleColorChange = evt => {
-        setForm(prevForm => ({...prevForm, hex: evt.target.value}));
         const valueColor = evt.target.value;
-        // if (valueColor.length === 7) {
-            
-        // }
+        const reg = /#[a-f0-9]{6}/gi;
+        if (valueColor.length === 7 && reg.test(valueColor)) {         
+            const r = parseInt(valueColor.substring(1,3),16);
+            const g = parseInt(valueColor.substring(3,5),16);
+            const b = parseInt(valueColor.substring(5),16);
+            const rgb = `rgb(${r}, ${g}, ${b})`;
+            setForm(prevForm => ({...prevForm, hex: evt.target.value, rgb: rgb}));
+        }
     };
 
     return ( 
@@ -21,7 +25,7 @@ export default function ColorConverter({ props }) {
                 type="text" 
                 onChange={handleColorChange} 
                 maxLength="7"/>
-            <span> </span> 
+            <span>{form.rgb}</span> 
         </form>
     )
 }
